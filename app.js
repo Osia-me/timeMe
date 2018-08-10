@@ -21,13 +21,16 @@ var commentRoutes = require("./routes/comments"),
 app.locals.moment = require('moment');
 
 
-//seedDB(); //seed db 
-mongoose.connect("mongodb://localhost:27017/timeme_start", { useNewUrlParser: true });
+//seedDB(); //seed db
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSan());
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
+
+
+mongoose.connect("mongodb://localhost:27017/timeme_start", { useNewUrlParser: true });
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({

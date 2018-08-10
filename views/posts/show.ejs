@@ -28,7 +28,7 @@
   <% post.comments.forEach(function(comment){ %>
       <div class="row">
         <div class="col-md-12">
-          <span class="author"><%= comment.author %></span>
+          <div class="author"><%= comment.author %></div>
           <span class="float-right"><%= comment.created.toDateString() %></span>
           <p>
             <%= comment.text %>
