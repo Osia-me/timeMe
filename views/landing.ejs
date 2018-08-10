@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TimeMe</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/style/landing.css">
+  <link rel="icon" type="image/png" href="/img/logo1.png" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-sm navbar-light bg-dark fixed-top">
+  <div class="container">
+    <a href="/posts" class="navbar-brand">
+      <img src="/img/logo1.png" width="35" height="35" class="d-inline-block align-top" alt="">
+      timeMe
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a href="/" class="nav-link">About Us</a>
+      </li>
+        <% if(!currentUser){ %>
+        <li><a href="/register" class="nav-link"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+        <li><a href="/login" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <% } else { %>
+        <li><a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"></i></i> Logout</a></li>
+        <% } %>
+
+      </div>
+    </div>
+  </ul>
+</nav>
+
+<!-- Showcase slider -->
+<div class="content">
+<section id="showcase">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <img src="../img/img/person1.jpeg" class="img-fluid rounded-circle">
+          <h3>Patrick White</h3>
+          <h5 class="text-muted">Web designer</h5>
+          <p>&#171;What I think about timeMe project? It is just brilliant! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate quis, itaque nostrum fugit error perspiciatis exercitationem rerum esse, veritatis, recusandae vel. Quasi, illo! ipsum dolor sit amet, consectetur adipisicing elit. Quia nulla perspiciatis, ipsum pariatur et, eligendi!&#187;</p>
+        </div>
+      </div>
+      <a href="/register" class="btn btn-success btn-signup btn-block">Sign Up now</a>
+    </div>
+
+  </div>
+  <div class="carousel-item">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <img src="../img/img/person2.jpeg" class="img-fluid rounded-circle">
+          <h3>Jone Williams</h3>
+          <h5 class="text-muted">Sailor</h5>
+          <p>&#171;Since I'm on timeMe I got help of many proffessional people around the globe. And I helped other using all my experience. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor repudiandae quos iste, reprehenderit sit laborum esse, quaerat rem sint explicabo sed non dolores. ipsum dolor sit amet, consectetur adipisicing elit. Quia nulla perspiciatis, ipsum pariatur et, eligendi!&#187;</p>
+        </div>
+      </div>
+      <a href="/register" class="btn btn-success btn-signup btn-block">Sign Up now</a>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <img src="../img/img/person3.jpeg" class="img-fluid rounded-circle">
+          <h3>Anna Ivanova</h3>
+          <h5 class="text-muted">Nanny</h5>
+          <p>&#171;I love timeMe project. Really it is so easy to use. Once I gave one hour of my help to some kids I can ask somebody else to help me with legal issues or cock me a dinner or something else. Really excited! &#187;</p>
+        </div>
+      </div>
+      <a href="/register" class="btn btn-success btn-signup btn-block">Sign Up now</a>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <img src="../img/img/person4.jpeg" class="img-fluid rounded-circle">
+          <h3>Laqueta Azikiwe</h3>
+          <h5 class="text-muted">Lead Writer</h5>
+          <p>&#171;I'm excited about timeMe project! Really it is so cool just to help someone and get the same when you just need it. It is a collection of brilliant minds, not just some commertial project it is a great big family of proffesionals ready to help!&#187;</p>
+        </div>
+      </div>
+      <a href="/register" class="btn btn-success btn-signup btn-block">Sign Up now</a>
+    </div>
+  </div>
+</div>
+
+<a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+  <span class="carousel-control-prev-icon"></span>
+</a>
+<a href="#myCarousel" data-slide="next" class="carousel-control-next">
+  <span class="carousel-control-next-icon"></span>
+</a>
+
+</div>
+</section>
+</div>
+
+
+<!-- Explore Head -->
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="py-5">
+          <h1 class="display-4">timeMe project</h1>
+          <p class="lead">Have you ever thought about using any service you need paying by service you could provide? This is what timeMe is all about. Here you could connect with professionals all around the globe and exchange your skills without money in this process.</p>
+          <a href="#explore-section" class="btn btn-outline-secondary">Find Out More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore Section -->
+<section id="explore-section" class="bg-light text-muted py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="../img/img/connecting.jpeg" alt="explore-img" class="img-fluid md-3 rounded-circle">
+      </div>
+      <div class="col-md-6">
+        <h3>Explore & Connect</h3>
+        <p>Sign Up and become one of timeMe users today</p>
+        <div class="d-flex flex-row">
+          <div class="p-4 align-self-start">
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="p-4 align-self-end">
+            Lorem ipsum dolor sit amet. A sunt quas atque tempora consequuntur, ullam autem voluptatem, dolores, necessitatibus.
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="p-4 align-self-start">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="p-4 align-self-end">
+          Lorem ipsum dolor sit amet. A sunt quas atque tempora consequuntur, autem voluptatem, dolores, necessitatibus.
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<!-- Create Head -->
+<section id="create-head-section" class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="py-5">
+          <h1 class="display-4">Change the world</h1>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quaerat eaque magnam atque vel maiores nobis quod labore neque, vero reprehenderit voluptas ducimus laborum debitis modi. Iure asperiores veritatis nostrum.</p>
+          <a href="#create-section" class="btn btn-outline-light">Find Out More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Create Section -->
+<section id="create-section" class="py-5">
+  <div class="container content-create">
+    <div class="row">
+
+      <div class="col-md-6">
+        <h3>Write your posts - share your ideas</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore aliquam similique perferendis nulla delectus nesciunt, doloremque tempore dolores repudiandae fuga voluptates ipsum, dolore laboriosam dolorem quibusdam ipsam laborum. Eos omnis laudantium, hic eveniet? Reprehenderit aut quas, alias voluptates eaque dicta incidunt quibusdam quaerat illum iusto possimus, minima, consequuntur fugiat vel.</p>
+        <div class="d-flex flex-row">
+          <div class="p-4 align-self-start">
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="p-4 align-self-end">
+            Lorem ipsum dolor sit amet. A sunt quas atque tempora consequuntur, ullam autem voluptatem, dolores, necessitatibus.
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="p-4 align-self-start">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="p-4 align-self-end">
+          Lorem ipsum dolor sit amet. A sunt quas atque tempora consequuntur, autem voluptatem, dolores, necessitatibus.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <img src="../img/img/generate.jpeg" alt="create" class="img-fluid mb-3 rounded-circle">
+    </div>
+
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- include footer template -->
+<% include ./partials/footer%>

@@ -1,0 +1,157 @@
+body {
+  overflow-x: hidden;
+  background-image:url("../img/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: "Open Sans";
+}
+
+.content {
+  margin-top: 70px;
+  margin-bottom: 150px;
+}
+
+.navbar .nav-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+
+.navbar .nav-item.active {
+  border-left: #fff 3px solid;
+}
+
+.bg-dark{
+  background-color: #017E8A!important;
+  opacity: 0.9;
+}
+
+.carousel-item{
+  height: 500px;
+}
+
+.card {
+  height: 300px;
+  width: 70%;
+  margin: 100px auto 20px auto;
+  text-align: center;
+}
+
+.card img {
+  width: 20%;
+  margin: 20px;
+  margin-top: -100px;
+}
+
+.card p {
+  text-align: left;
+  padding: 10px;
+  font-style: italic;
+}
+
+.btn-signup {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.fas {
+  font-size: 16px;
+}
+
+.btn-success {
+  background-color: #017E8A;
+  border: 2px solid #0000;
+}
+
+.btn-success:hover{
+  background-color: #045c65;
+  border: #045c65 1px solid;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success:focus{
+  background-color: #045c65 !important;
+  border: #045c65 1px solid !important;
+}
+
+.btn-nav {
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.navbar{
+  height: 43px;
+  font-size: 14px;
+}
+
+input[type=search].form-control {
+  padding: 3px;
+  height: 27px;
+  font-size: 14px;
+}
+
+.navbar.bg-light#back-nav {
+  background: #017E8A !important;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+  color: #fff;
+}
+.navbar-light .navbar-brand {
+  color: #fff;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+#explore-section .fa, #share-section .fa {
+  color: #fff;
+  background: #333;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+#create-section .fa {
+  color: #008ed6;
+  background: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+#main-footer {
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+@media (max-width: 575.98px) {
+    .card {
+    height: 500px;
+    width: 70%;
+    margin: 100px auto 50px auto;
+    text-align: center;
+  }
+
+  .card img {
+    width: 50%;
+    margin: 20px;
+    margin-top: -100px;
+  }
+
+  .card p {
+    text-align: left;
+    padding: 10px;
+    font-style: italic;
+    font-size: 15px;
+  }
+
+  .btn-signup {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+ }
