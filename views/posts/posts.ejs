@@ -15,9 +15,12 @@
             <div class="card-body">
               <h5 class="card-title"><%= post.title %></h5>
                 <img src="<%= post.image %>" alt="" height="200px" class=" card-img-top">
-
-              <p "card-text"><span><%=post.body.substring(0,100)%>... <a href="/posts/<%= post._id %>"> more</a></span></p>
-                <h6 class="card-subtitle mb-2 text-muted">Author: Somebody</h6>
+                <% if (typeof post.body == 'undefined' ) { %>
+                <p> no content</p>
+                <% } else { %>
+                <p "card-text"><span><%= post.body.substring(0,100) %> <a href="/posts/<%= post._id %>"> ...more</a></span></p>
+               <% } %>
+                <h6 class="card-subtitle mb-2 text-muted">Author: <%= post.author.username %></h6>
               <p>Created: <%=post.created.toDateString()%></p>
 
             </div>

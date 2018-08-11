@@ -12,7 +12,7 @@
   </div>
 </div>
 <div class="caption">
-  <p>Written By ...</p>
+  <p>Written By <strong><%= post.author.username %></strong></p>
   <p>You could have his our for 40 min of yours</p>
 </div>
 
@@ -28,7 +28,7 @@
   <% post.comments.forEach(function(comment){ %>
       <div class="row">
         <div class="col-md-12">
-          <div class="author"><%= comment.author %></div>
+          <div class="author"><%= comment.author.username %></div>
           <span class="float-right"><%= comment.created.toDateString() %></span>
           <p>
             <%= comment.text %>

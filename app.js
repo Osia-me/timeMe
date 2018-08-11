@@ -7,7 +7,7 @@ var express       = require("express"),
     LocalStrategy = require("passport-local"),
     Post          = require("./models/post"),
     Comment       = require("./models/comment"),
-    User         = require("./models/user"),
+    User          = require("./models/user"),
     Review        = require("./models/review"),
     seedDB        = require("./seeds.js");
 
@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect("mongodb://localhost:27017/timeme_start", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/timeme_up", { useNewUrlParser: true });
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -38,6 +38,7 @@ app.use(require("express-session")({
   resave: false,
   saveUninitialized: false
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));

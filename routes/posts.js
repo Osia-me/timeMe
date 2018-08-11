@@ -20,14 +20,22 @@ router.get("/", function(req, res){
 });
 
 //2. NEW - show form for new post
-router.get("/new", function(req, res){
+router.get("/new", isLoggedIn, function(req, res){
   res.render("posts/new");
 });
 
 // 3. CREATE - create the post and save it to the db
-router.post("/", function(req, res){
+router.post("/", isLoggedIn, function(req, res){
+  var title = req.body.title;
+  var image = req.body.image;
+  var body = req.body.body;
+  var author = {
+      id: req.user._id,
+      username: req.user.username
+     }
+  var newPost = {title: title, image: image, body: body, author: author}
   //Create a new post and save into the db
-  Post.create(req.body.post, function(err, justCreatedPost){
+  Post.create(newPost, function(err, justCreatedPost){
     if(err){
       console.log(err);
     } else {
