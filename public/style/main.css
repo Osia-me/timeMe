@@ -47,6 +47,14 @@ body {
   color: #fff;
 }
 
+.img-group{
+  margin: 0 20px 20px 0;
+}
+
+.img-group img {
+  width: 500px;
+}
+
 .caption {
   padding: 9px;
 }
@@ -68,6 +76,10 @@ body {
   background-color: #045c65 !important;
   border: #045c65 1px solid !important;
   border: none ;
+}
+
+.editbtn {
+  margin: 20px 0 10px 0;
 }
 
 .wrapper{

@@ -60,11 +60,64 @@ router.get("/:id", function(req, res){
   });
 });
 
+// 5. EDIT POST ROUTE
+router.get("/:id/edit", checkOwnership, function(req, res){
+    Post.findById(req.params.id, function(err, foundPost){
+        res.render("posts/edit", {post: foundPost});
+    });
+});
+
+
+// 6. UPDATE POST ROUTE
+router.put("/:id", checkOwnership, function(req, res){
+  //find and update correct post
+  Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
+    if(err){
+      res.redirect("/posts");
+    } else {
+      res.redirect("/posts/" + req.params.id);
+    }
+  });
+  //redirect somewhere
+});
+
+// 7. DESTROY POST ROUTE
+router.delete("/:id", checkOwnership, function(req, res){
+  Post.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      res.redirect("/posts");
+    } else {
+      res.redirect("/posts");
+    }
+  });
+});
+
+
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();
   }
   res.redirect("/login");
 };
+
+function checkOwnership(req, res, next){
+  if(req.isAuthenticated()){
+    //if not -redirect
+    Post.findById(req.params.id, function(err, foundPost){
+      if(err){
+        res.redirect("back");
+      } else {
+          //does user own the post?
+          if(foundPost.author.id.equals(req.user._id)){
+            next();
+          } else {
+            res.redirect("back");
+          }
+      }
+    });
+  } else {
+    res.redirect("back");
+  }
+}
 
 module.exports = router;

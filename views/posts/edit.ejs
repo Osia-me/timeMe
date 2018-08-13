@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+  <h1 class="form-header">Edit <%= post.title %></h1>
+  <form action="/posts/<%= post._id %>?_method=PUT" method="post" class="form-new-post">
+    <div class="form-group">
+      <input type="text" name="post[title]" value="<%= post.title %>" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" name="post[image]" value="<%= post.image %>" class="form-control">
+    </div>
+    <div class="form-group">
+      <textarea type="number" name="post[body]" class="form-control"><%= post.body %></textarea>
+    </div>
+    <button class="btn btn-success btn-block">Submit</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>
+<p>form goes here</p>

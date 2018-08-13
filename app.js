@@ -1,15 +1,16 @@
-var express       = require("express"),
-    app           = express(),
-    bodyParser    = require("body-parser"),
-    expressSan    = require("express-sanitizer"),
-    mongoose      = require("mongoose"),
-    passport      = require("passport"),
-    LocalStrategy = require("passport-local"),
-    Post          = require("./models/post"),
-    Comment       = require("./models/comment"),
-    User          = require("./models/user"),
-    Review        = require("./models/review"),
-    seedDB        = require("./seeds.js");
+var express        = require("express"),
+    app            = express(),
+    bodyParser     = require("body-parser"),
+    expressSan     = require("express-sanitizer"),
+    mongoose       = require("mongoose"),
+    passport       = require("passport"),
+    LocalStrategy  = require("passport-local"),
+    methodOverride = require("method-override"),
+    Post           = require("./models/post"),
+    Comment        = require("./models/comment"),
+    User           = require("./models/user"),
+    Review         = require("./models/review"),
+    seedDB         = require("./seeds.js");
 
 
 var commentRoutes = require("./routes/comments"),
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSan());
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
-
+app.use(methodOverride("_method"));
 
 mongoose.connect("mongodb://localhost:27017/timeme_up", { useNewUrlParser: true });
 
