@@ -67,6 +67,10 @@ body {
   font-weight: bold;
 }
 
+.btn-delete {
+  display: inline-block;
+}
+
 .btn-success{
   background-color: #017E8A;
   border: #045c65 1px solid;
