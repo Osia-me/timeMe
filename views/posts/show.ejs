@@ -6,10 +6,12 @@
 <div class="clearfix">
 <div class="img-group float-left">
     <img class="img-thumbnail" src="<%= post.image %>" alt="img">
+    <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
     <a href="/posts/<%= post._id %>/edit" class="btn btn-success editbtn btn-block">Edit</a>
     <form action="/posts/<%= post._id%>?_method=DELETE" method="post">
       <button class="btn btn-danger btn-block btn-xs">Delete</button>
     </form>
+  <% } %>
 </div>
     <p><%= post.body %></p>
   </div>
@@ -35,6 +37,8 @@
           <p>
             <%= comment.text %>
           </p>
+            <a href="/posts/<%=post._id%>/comments/<%=comment._id%>/edit"
+            class="btn btn-xs btn-warning">Edit</a>
         </div>
       </div>
   <% }); %>
