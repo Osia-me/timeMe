@@ -17,6 +17,11 @@ body {
   margin-bottom: 100px;
 }
 
+.jumbotron {
+  width: 97%;
+  margin: 20px auto 50px auto;
+}
+
 .navbar .nav-link {
   font-size: 14px;
   text-transform: uppercase;

@@ -40,8 +40,19 @@
   </ul>
 </nav>
 
+<div class="container content">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+ <% } %>
+ <% if(success && success.length > 0){ %>
+  <div class="alert alert-success" role="alert">
+    <%= success %>
+  </div>
+<% } %>
+
 <!-- Showcase slider -->
-<div class="content">
 <section id="showcase">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner">

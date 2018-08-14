@@ -49,8 +49,9 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 router.get("/:id", function(req, res){
   //find the campground with provided id
   Post.findById(req.params.id).populate("comments").exec(function(err, foundPost){
-    if(err){
-      console.log;
+    if(err || !foundPost){
+      req.flash("error", "Post not found");
+      res.redirect("back");
     } else {
       //render the show page
       res.render("posts/show", {post: foundPost});
@@ -62,7 +63,11 @@ router.get("/:id", function(req, res){
 // 5. EDIT POST ROUTE
 router.get("/:id/edit", middleware.checkPostOwnership, function(req, res){
     Post.findById(req.params.id, function(err, foundPost){
+      if(err || !foundPost){
+        req.flash("error", "Post not found!");
+      } else {
         res.render("posts/edit", {post: foundPost});
+      }
     });
 });
 
@@ -72,6 +77,7 @@ router.put("/:id", middleware.checkPostOwnership, function(req, res){
   //find and update correct post
   Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
     if(err){
+      req.flash("error", "Post not found!");
       res.redirect("/posts");
     } else {
       res.redirect("/posts/" + req.params.id);
@@ -84,6 +90,7 @@ router.put("/:id", middleware.checkPostOwnership, function(req, res){
 router.delete("/:id", middleware.checkPostOwnership, function(req, res){
   Post.findByIdAndRemove(req.params.id, function(err){
     if(err){
+      req.flash("error", "Post not found!");
       res.redirect("/posts");
     } else {
       res.redirect("/posts");
