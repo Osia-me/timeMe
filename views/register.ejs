@@ -2,52 +2,62 @@
 <% include ./partials/header%>
 
 <div class="login-register">
-  <h1>Sign Up!</h1>
-      <form action="/register" method="post">
-        <div class="form-group">
-          <input class="form-control" type="text" name="username" placeholder="Username">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="password" name="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="adminCode" placeholder="Admin Code">
-        </div>
-        <!-- <div class="form-group">
-          <input class="form-control" type="text" name="firstName" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="lastName" placeholder="Lastname">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="email" name="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="avatar" placeholder="Avatar">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="number" name="yearOfBirth" placeholder="Year of Birth">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="job" placeholder="Job">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="number" name="experience" placeholder="Experience">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="city" placeholder="City">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="country" placeholder="Country">
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" type="text" name="description" placeholder="Tell a bit about yourself"></textarea>
-        </div> -->
-        <div class="form-group">
-          <input type="submit" value="Sign Up!" class="btn btn-success">
-        </div>
-      </form>
-</div>
+  <h2 class="form-h2">Sign Up For Free to timeMe</h2>
+  <form action="/register" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-5">
+          <input type="text" class="form-control" name="username" placeholder="Username">
+      </div>
+      <div class="form-group col-md-5">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <div class="form-group col-md-2">
+        <input class="form-control" type="text" name="adminCode" placeholder="Admin Code" title="Live blank if you are not admin :)">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <input class="form-control" type="text" name="firstName" placeholder="Name">
+      </div>
+      <div class="form-group col-md-5">
+        <input class="form-control" type="text" name="lastName" placeholder="Lastname">
+      </div>
+      <div class="form-group col-md-2">
+        <input class="form-control" type="number" name="yearOfBirth" placeholder="Birth Date">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" type="email" name="email" placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" type="text" name="avatar" placeholder="Place here your avatar url">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-9">
+        <input class="form-control" type="text" name="job" placeholder="Job">
+      </div>
+      <div class="form-group col-md-3">
+        <input class="form-control" type="number" name="experience" placeholder="Experience">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" type="text" name="city" placeholder="City">
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" type="text" name="country" placeholder="Country">
+      </div>
+    </div>
+      <div class="form-group">
+        <textarea class="form-control" type="text" name="description" placeholder="Tell a bit about yourself"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Sign Up!" class="btn btn-success btn-block">
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- include footer template -->

@@ -13,7 +13,21 @@ router.get("/register", function(req, res){
 });
 //handle sign up logic
 router.post("/register", function(req, res){
-  var newUser = new User({username: req.body.username});
+  var newUser = new User(
+    {
+      username: req.body.username,
+      firstName: req.body.firstName,
+      lastName:req.body.lastName,
+      avatar: req.body.avatar,
+      email: req.body.email,
+      yearOfBirth: req.body.yearOfBirth,
+      job: req.body.job,
+      experience: req.body.experience,
+      city: req.body.city,
+      country: req.body.country,
+      description: req.body.description
+    });
+
   if(req.body.adminCode === 'secretcode123') {
       newUser.isAdmin = true;
     }
@@ -24,7 +38,7 @@ router.post("/register", function(req, res){
     }
       passport.authenticate("local")(req, res, function(){
       req.flash("success", "Welcome to timeMe " + req.body.username);
-      res.redirect("/posts");
+      res.redirect("/users");
     });
   });
 });

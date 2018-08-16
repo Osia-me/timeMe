@@ -115,6 +115,10 @@ body {
   margin: 0 auto;
 }
 
+.form-h2 {
+  margin-bottom: 40px;
+}
+
 .navbar{
   height: 43px;
   font-size: 14px;
@@ -127,8 +131,8 @@ input[type=search].form-control {
 }
 
 .login-register {
-  margin: 0 auto;
-  width: 60%;
+  margin: 0 auto 250px auto;
+  width: 70%;
   text-align: center;
 }
 

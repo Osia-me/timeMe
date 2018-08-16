@@ -16,7 +16,7 @@
     <p><%= post.body %></p>
   </div>
 <div class="caption">
-  <p>Written By <strong><%= post.author.username %></strong></p>
+  <p>Written By <strong><a href="/users/<%=post.author.id%>"><%= post.author.username %></a></strong></p>
   <p>You could have his hour for 40 min of yours</p>
 </div>
 

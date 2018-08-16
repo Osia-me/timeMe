@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+  <div class="row wrapper text-center">
+
+    <% users.forEach(function(user){ %>
+      <div class="col-md-3 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= user.firstName %> <%= user.lastName %></h5>
+                <img src="<%= user.avatar %>" alt="avatar" class="card-img-top" height="150px">
+                  <% if (typeof user.description == 'undefined' ) { %>
+                    <p> no content</p>
+                  <% } else { %>
+                    <p "card-text"><span><%= user.description.substring(0,10) %> <a href="/users/<%= user._id %>"> ...more</a></span></p>
+                  <% } %>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= user.job %> (Experience: <%=user.experience%>)</h6>
+              <a href="/users/<%= user._id %>" class="btn btn-success">More about <%=user.firstName%></a>
+
+            </div>
+          </div>
+      </div>
+
+      </li>
+    <% }); %>
+  </div>
+
+  </div>
+
+  <% include ../partials/footer %>
