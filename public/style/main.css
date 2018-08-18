@@ -4,6 +4,11 @@ html {
 }
 
 body {
+  overflow-x: hidden;
+  background-image:url("../img/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   font-family: "Open Sans";
 }
 
@@ -72,6 +77,11 @@ body {
   font-weight: bold;
 }
 
+.heading-user{
+  font-size: 30px;
+  text-align: center;
+}
+
 .btn-delete {
   display: inline-block;
 }
@@ -119,14 +129,22 @@ body {
   margin-bottom: 40px;
 }
 
-.navbar{
-  height: 43px;
-  font-size: 14px;
+.form-search{
+  margin: 20px auto;
 }
 
-input[type=search].form-control {
-  height: auto;
-  padding: 5px;
+.form-control{
+  display: inline-block;
+  width: 100%;
+
+}
+
+input["type:search"]{
+  padding-right: 20px;
+}
+
+.navbar{
+  height: 43px;
   font-size: 14px;
 }
 

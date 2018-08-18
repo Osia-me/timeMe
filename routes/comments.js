@@ -20,7 +20,7 @@ router.get("/new",  middleware.isLoggedIn, function(req, res){
 
 //Comments Create
 router.post("/", middleware.isLoggedIn,function(req, res){
-   //lookup campground using ID
+   //lookup post using ID
    Post.findById(req.params.id, function(err, post){
        if(err){
            console.log(err);

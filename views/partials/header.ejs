@@ -52,11 +52,12 @@
         <% } else { %>
           <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="far fa-user"></i> <%= currentUser.username %>
+            <img src="<%= currentUser.avatar %>" width="35" height="35" class="d-inline-block align-top img-fluid rounded-circle" alt="">
+              <%= currentUser.username %>
            </a>
            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-              <a href="#" class="dropdown-item"><i class="far fa-user"></i> Your Profile</a>
+              <a href="/users/<%= currentUser._id %>" class="dropdown-item"> <i class="far fa-user"></i> Your Profile</a>
               <a href="/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
            </div>
          </li>

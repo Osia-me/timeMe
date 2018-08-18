@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+  <h1 class="form-header">Write your Review to <%= user.firstName %></h1>
+  <form action="/users/<%= user._id %>/reviews" method="post" class="form-new-post">
+
+
+    <div class="form-group">
+      <textarea type="number" name="review[text]" placeholder="Write your review about <%=user.firstName%> here" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-success btn-block">Submit</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>

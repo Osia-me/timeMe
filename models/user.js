@@ -17,11 +17,11 @@ var UserSchema = new mongoose.Schema({
   country: String,
   description: String,
   reviews: [
-      {
-         type: mongoose.Schema.Types.ObjectId,
-         ref: "Review"
-      }
-   ]
+       {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Review"
+       }
+    ]
 });
 
 UserSchema.plugin(passportLocalMongoose);

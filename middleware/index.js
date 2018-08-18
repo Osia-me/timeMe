@@ -1,5 +1,6 @@
 var Post       = require("../models/post");
 var Comment    = require("../models/comment");
+var Review     = require("../models/review");
 var middlewareObj = {};
 
 middlewareObj.checkPostOwnership = function(req, res, next){

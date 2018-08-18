@@ -1,5 +1,14 @@
 <% include ../partials/header %>
 
+<!-- <div class="form-search">
+  <form action="/users" method="post" class="form-inline">
+    <div class="form-group">
+      <input class="form-control my-2" type="search" name="search" placeholder="Profession you need" aria-label="Search">
+      <button class="btn btn-outline-secondary d-inline" type="submit">Search</button>
+    </div>
+  </form>
+</div> -->
+
   <div class="row wrapper text-center">
 
     <% users.forEach(function(user){ %>
@@ -7,12 +16,8 @@
         <div class="card">
             <div class="card-body">
               <h5 class="card-title"><%= user.firstName %> <%= user.lastName %></h5>
-                <img src="<%= user.avatar %>" alt="avatar" class="card-img-top" height="150px">
-                  <% if (typeof user.description == 'undefined' ) { %>
-                    <p> no content</p>
-                  <% } else { %>
-                    <p "card-text"><span><%= user.description.substring(0,10) %> <a href="/users/<%= user._id %>"> ...more</a></span></p>
-                  <% } %>
+                <img src="<%= user.avatar %>" alt="avatar" class="card-img-top">
+                    <p "card-text"><span><%= user.country %>, <%= user.city %></span></p>
                   <h6 class="card-subtitle mb-2 text-muted"><%= user.job %> (Experience: <%=user.experience%>)</h6>
               <a href="/users/<%= user._id %>" class="btn btn-success">More about <%=user.firstName%></a>
 

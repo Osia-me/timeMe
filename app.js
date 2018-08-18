@@ -33,7 +33,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-mongoose.connect("mongodb://localhost:27017/timeme_u", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/timeme_v", { useNewUrlParser: true });
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -59,7 +59,7 @@ app.use("/", indexRoutes);
 app.use("/posts", postsRoutes);
 app.use("/users", usersRoutes);
 app.use("/posts/:id/comments", commentRoutes);
-//app.use(reviewRoutes);
+app.use("/users/:id/reviews", reviewRoutes);
 
 // SERVERHOST
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
