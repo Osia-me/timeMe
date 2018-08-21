@@ -83,15 +83,11 @@ body {
 }
 
 .navbar{
-  height: 43px;
+  height: 55px;
   font-size: 14px;
 }
 
-input[type=search].form-control {
-  padding: 3px;
-  height: 27px;
-  font-size: 14px;
-}
+
 
 .navbar.bg-light#back-nav {
   background: #017E8A !important;

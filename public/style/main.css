@@ -31,9 +31,14 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   padding-left: 1em !important;
-  padding-right: 1em !important;
+  padding-right: 0.1em !important;
 }
-
+.nav-link {
+  display: inline;
+}
+.dropdown-item {
+  padding: 0.08rem 1.5rem; */
+}
 .navbar .nav-item.active {
   border-left: #fff 3px solid;
 }
@@ -139,12 +144,8 @@ body {
 
 }
 
-input["type:search"]{
-  padding-right: 20px;
-}
-
 .navbar{
-  height: 43px;
+  height: 50px;
   font-size: 14px;
 }
 
