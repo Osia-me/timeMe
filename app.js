@@ -31,8 +31,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-
-mongoose.connect("mongodb://Osia:123password@ds225382.mlab.com:25382/timeme", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
