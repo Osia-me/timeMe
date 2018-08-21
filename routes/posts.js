@@ -2,6 +2,27 @@ var express    = require("express");
 var router     = express.Router({mergeParams: true});
 var Post       = require("../models/post");
 var middleware = require("../middleware");
+var multer = require('multer');
+var storage = multer.diskStorage({
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  }
+});
+var imageFilter = function (req, file, cb) {
+    // accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+var upload = multer({ storage: storage, fileFilter: imageFilter})
+
+var cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: 'dw8olk9ey',
+  api_key: '364116563175276',
+  api_secret: '5kJEuqISmt6YWCv4vohHse8Dww4'
+});
 
 
 //1. INDEX ROUTE - all posts
