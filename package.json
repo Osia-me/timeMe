@@ -4,7 +4,7 @@
   "description": "timeMe is a project where everyone can change their time for others",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Osia",
   "license": "ISC",
