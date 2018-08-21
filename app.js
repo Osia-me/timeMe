@@ -20,8 +20,6 @@ var commentRoutes = require("./routes/comments"),
     usersRoutes   = require("./routes/users"),
     reviewRoutes  = require("./routes/reviews");
 
-app.locals.moment = require('moment');
-
 
 //seedDB(); //seed db
 
@@ -33,7 +31,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-mongoose.connect("mongodb://localhost:27017/timeme_v", { useNewUrlParser: true });
+
+mongoose.connect("mongodb://Osia:123password@ds225382.mlab.com:25382/timeme", { useNewUrlParser: true });
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
