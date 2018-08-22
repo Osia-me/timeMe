@@ -1,6 +1,7 @@
 var Post       = require("../models/post");
 var Comment    = require("../models/comment");
 var Review     = require("../models/review");
+var User       = require("../models/user");
 var middlewareObj = {};
 
 middlewareObj.checkPostOwnership = function(req, res, next){
@@ -48,6 +49,29 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
     res.redirect("back");
   }
 }
+
+middlewareObj.checkUserOwnership = function(req, res, next){
+    if(req.isAuthenticated()){
+      //if not -redirect
+      User.findById(req.params.id, function(err, foundUser){
+        if(err || !foundUser){
+          req.flash("error", "Post not found!");
+          res.redirect("back");
+        } else {
+            //does user own the post?
+            if(foundUser._id.equals(req.user._id) || req.user.isAdmin){
+              next();
+            } else {
+              req.flash("error", "You don't have permission to do that!");
+              res.redirect("back");
+            }
+        }
+      });
+    } else {
+      req.flash("error", "You need to be Login to do that!");
+      res.redirect("back");
+    }
+  }
 
 middlewareObj.isLoggedIn = function(req, res, next){
   if(req.isAuthenticated()){

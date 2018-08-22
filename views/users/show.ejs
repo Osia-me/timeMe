@@ -16,7 +16,15 @@
         <li class="list-group-item">Location: <%=user.country%>, <%=user.city%></li>
         <li class="list-group-item"><%=user.firstName%> has <i class="fas fa-clock"></i> 12 hours on account</li>
       </ul>
-      <a href="#" class="btn btn-success">Connect <%=user.firstName%></a>
+      <a href="mailto:timemeproject@outlook.com" class="btn btn-success">Connect <%=user.firstName%></a>
+        <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+          <a href="/users/<%=user._id%>/edit"
+              class="btn btn-sm btn-success">Edit
+          </a>
+          <form action="<%=user._id%>?_method=DELETE" method="POST" class="btn-delete">
+            <input type="submit" class="btn btn-danger btn-block" value="Delete">
+          </form>
+        <% } %>
     </div>
   </div>
   <div class="col-md-8">

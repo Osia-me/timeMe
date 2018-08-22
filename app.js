@@ -32,7 +32,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
-
+//"mongodb://localhost:27017/timeme_v"
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
   secret: "time is the most important in our life!",
